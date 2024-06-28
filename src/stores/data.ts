@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 
 export const prodStore = defineStore('products', {
     state: () => ({
-        products: []
+        products: [] as Product[]
     }),
     actions: {
         fetchProducts() {
@@ -12,3 +12,11 @@ export const prodStore = defineStore('products', {
         }
     }
 });
+
+export class Product {
+    id!: number;
+    thumbnail!: string;
+    brand!: string;
+    description!: string;
+    price!: number;
+}
